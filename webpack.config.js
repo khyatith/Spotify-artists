@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
@@ -20,5 +21,10 @@ module.exports = {
             { test: /\.css$/, use: [ 'style-loader', 'css-loader' ] }
         ]
     },
-    plugins: [HtmlWebpackPluginConfig]
+    plugins: [
+        HtmlWebpackPluginConfig,
+        new webpack.EnvironmentPlugin([
+            'CLIENT_ID'
+        ])
+    ]
 }

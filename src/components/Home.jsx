@@ -5,7 +5,7 @@ const authorizationUri = 'https://accounts.spotify.com/authorize';
 class Home extends React.Component {
 
     getToken(){
-        const clienId = 'c0db87b959e04ef586f2cc8a4e41b942';
+        const clienId = process.env.CLIENT_ID;
         const redirectUri = 'http://localhost:8080';
         
         window.open(`${authorizationUri}?client_id=${clienId}&response_type=token&redirect_uri=${redirectUri}`);
