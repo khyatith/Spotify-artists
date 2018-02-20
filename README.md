@@ -17,7 +17,7 @@ Use the Spotify REST API (https://developer.spotify.com/web-api/) to retrieve re
 
 # Tech Stack
 
-1. Library : React.js, react-router, infinite scrolling
+1. Library : React.js, react-router, infinite scrolling, bootstrap 4 for css
 2. bundler: webpack
 3. unit testing: jest
 
