@@ -1,0 +1,50 @@
+header {
+    background-color: #686868;
+    height: 50px;
+}
+
+header h4 {
+    color: #fff;
+    left: 0;
+    position: absolute;
+}
+
+.card {
+    display: inline-block;
+    width: 25%;
+    margin: 1%;
+    text-align: center;
+}
+
+.card img {
+    width: 98%;
+    height: 250px;
+    margin-top: 5px;
+}
+
+p {
+    font-size: 12px;
+}
+
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.btn.btn-success {
+    position: absolute;
+    margin: 0 auto;
+    top: 50%;
+    max-width: 50%;
+    left: 0;
+    right: 0;
+}
