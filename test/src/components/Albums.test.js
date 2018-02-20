@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import { mount, configure } from 'enzyme';
+import { mount, configure, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import Albums from '../../../src/components/Albums.jsx';
 import fetchMock from 'fetch-mock';
@@ -14,19 +14,35 @@ describe('<Albums />', () => {
 
     let wrapper;
 
+    //componentWillMount test
+    it('get the url params from prop in componentWillMount', () => {
+        const spy = jest.spyOn(Albums.prototype, 'componentWillMount');
+        const match = { accessToken: 'foo' };
+        wrapper = shallow(<Albums params={match} />);
+        wrapper.instance().componentWillMount();
+        expect(spy).toHaveBeenCalled();
+        spy.mockReset();
+        spy.mockRestore();
+    });
+
+    // componentDidMount is called
     it('mounts', () => {
         const spy = jest.spyOn(Albums.prototype, 'componentDidMount');
-        wrapper = mount(<Albums />);
+        const match = { accessToken: 'foo' };
+        wrapper = shallow(<Albums params={match} />);
+        wrapper.setState({ limit: 1, token: 'fakeToken'});
         wrapper.instance().componentDidMount();
         expect(spy).toHaveBeenCalled();
         spy.mockReset();
         spy.mockRestore();
     });
 
+    //testing fetch from API
     it('calls the API and populates the state', () => {
         const callAPI = jest.fn();
-        wrapper = mount(<Albums />);
-        wrapper.setState({ limit: 1 });
+        const match = { accessToken: 'foo' };
+        wrapper = shallow(<Albums params={match} />);
+        wrapper.setState({ limit: 1, token: 'fakeToken' });
         fetchMock.get('https://api.spotify.com/v1/artists/0oSGxfWSnnOXhD2fKuz2Gy/albums?market=ES&album_type=album&limit=1&offset=0', JSON.stringify({
                 "items" : [ {
                     "album_type" : "album",
