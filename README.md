@@ -33,7 +33,7 @@ Use the Spotify REST API (https://developer.spotify.com/web-api/) to retrieve re
 # App Workflow
 
 1. When you open the app on localhost:8080, it shows a button 'Open Albums'
-2. Clicking on the button, wil redirect the user to the spotify API for authorization using implicit grant.
+2. Clicking on the button, wil redirect the user to the spotify API for authorization using implicit grant. At this point, you will be asked to login to spotify, if you aren't logged in yet.
 3. On accepting the authorization, the main page opens up with David bowie albums.
 4. The page is fully responsive down to 320px screen width.
 5. Clicking on 'open' button will open up the album in spotify
