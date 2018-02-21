@@ -24,11 +24,12 @@ Use the Spotify REST API (https://developer.spotify.com/web-api/) to retrieve re
 # Instructions to run the app
 
 1. Add CLIENT_ID as environment variable CLIENT_ID=<your client id from spotify>
-2. Clone the repo
-3. cd Spotify-artists
-4. npm install OR yarn install
-5. npm start OR yarn start : Open the app on localhost:8080
-6. To run tests, yarn test OR npm test
+2. Create an App on spotify, go to edit settings, add http://localhost:8080 as redirect url 
+3. Clone the repo
+4. cd Spotify-artists
+5. npm install OR yarn install
+6. npm start OR yarn start : Open the app on localhost:8080
+7. To run tests, yarn test OR npm test
   
 # App Workflow
 
